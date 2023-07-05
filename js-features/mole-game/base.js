@@ -3,10 +3,10 @@
     activeHole = 1;
 
   const stop = () => playing = true,
-    getHole = index => document.getElementById(`hole${index}`),
-    deactivateHole = index =>
+    getHole = index => document.getElementById(`hole${index}`), //сюда присваивается лунка
+    deactivateHole = index =>   //деактивация
       getHole( index ).className = 'hole',
-    activateHole = index =>
+    activateHole = index => //активация
       getHole( index ).className = 'hole hole_has-mole',
     next = () => setTimeout(() => {
       if ( !playing ) {
@@ -19,4 +19,8 @@
     }, 800 );
 
   next();
-})();
+})
+
+();
+
+
