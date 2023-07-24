@@ -10,5 +10,6 @@ dropdownValue.addEventListener('click', value);
 
 dropdownItem.forEach(item => item.addEventListener('click', (evt) => {
 	evt.preventDefault();
+	dropdownList.classList.remove('dropdown__list_active');
 	dropdownValue.textContent = item.textContent;
 }));

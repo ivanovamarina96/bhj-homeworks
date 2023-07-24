@@ -20,6 +20,13 @@ class Game {
 
 
   registerEvents() {
+  let symbol = [...document.querySelectorAll ('.symbol')];
+  setTimeout(() => {
+    (let ix = 0; ix < symbol.length; i++) {
+      if (symbol[ix])
+    }
+    
+  }, timeout);
   document.addEventListener('keydown', event => {
     if (this.currentSymbol.textContent.toLowerCase() === event.key.toLowerCase()) {
       this.success();
