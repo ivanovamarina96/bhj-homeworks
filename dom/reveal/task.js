@@ -1,18 +1,20 @@
 const reval = [...document.querySelectorAll('.reveal')];
 
-window.addEventListener('scroll', () => {
-		for (let i = 0; i < reval.length; i++) {
+reval.forEach (element => {
+	window.addEventListener('scroll', () => {
+		
 			let {
 				top,
 				bottom
-			} = reval[i].getBoundingClientRect();
+			} = element.getBoundingClientRect();
 			if (top > 0 || bottom > 0) {
-				reval[i].classList.add('reveal_active')
+				element.classList.add('reveal_active')
 			}
-			if (bottom < 0) {
-				reval[i].classList.remove('reveal_active')
+			if (bottom < 0 || top > window.innerHeight) {
+				element.classList.remove('reveal_active')
 			}
-		}
-	}
+		})	
 
-)
+})
+
+
