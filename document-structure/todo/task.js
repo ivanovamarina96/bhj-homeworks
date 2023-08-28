@@ -6,23 +6,20 @@ const tasksInput = document.querySelector('.tasks__input')
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
 	const parent = document.createElement('div');
-	parent.classList.add('task');
 	tasksList.insertAdjacentElement("afterBegin", parent);
 	const child = document.createElement('div');
 	child.classList.add('task__title');
-	child.textContent = tasksInput.value;
-
-	if (child.textContent == tasksInput.value) {
-		tasksInput.value = '';
-	}
+	child.textContent = tasksInput.value.trim();
+	tasksInput.value = '';
+	if (child.textContent.length > 0) {
 	parent.insertAdjacentElement("beforeEnd", child);
 	parent.insertAdjacentHTML('beforeEnd', '<a href="#" class="task__remove">&times;</a>');
-	const removeTask = document.querySelectorAll('.task__remove');
-	removeTask.forEach((element) => {
-		element.addEventListener('click', (e) => {
-			e.preventDefault();
-			element.parentElement.remove();
-		})
+	parent.classList.add('task');
+	}
+
+	parent.children[1].addEventListener('click', (e) => {
+		e.preventDefault();
+		parent.remove();
 	})
 
 

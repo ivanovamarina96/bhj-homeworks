@@ -20,7 +20,7 @@ productQuantity.forEach((index) => {
 
 
 		if (index.parentElement.parentElement.getAttribute('data-id') == product.getAttribute('data-id')) {
-			product.children[1].textContent = index.children[1].children[1].textContent;
+			product.children[1].textContent = Number(product.children[1].textContent) + Number(index.children[1].children[1].textContent);
 		} else {
 
 			product.classList.add('cart__product');
